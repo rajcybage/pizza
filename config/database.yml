@@ -1,0 +1,25 @@
+# MySQL.  Versions 4.1 and 5.0 are recommended.
+#
+#
+# Be sure to use new-style password hashing:
+#   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
+pg: &pg
+  adapter: postgresql
+  encoding: unicode
+  username: rajarshid
+  password: root
+  host: localhost
+  pool: 5
+
+development:
+  <<: *pg
+  database: pizza_development
+
+test: &test
+  <<: *pg
+  database: pizza_testing
+
+production:
+  <<: *pg
+  database: pizza_production
+
