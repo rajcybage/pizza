@@ -1,5 +1,3 @@
-require 'concerns/order_concern.rb'
-
 class Order < ActiveRecord::Base
   include OrderConcern
 

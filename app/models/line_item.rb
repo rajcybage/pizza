@@ -1,5 +1,3 @@
-require 'concerns/line_item_concern.rb'
-
 class LineItem < ActiveRecord::Base
   include LineItemConcern
 

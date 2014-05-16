@@ -7,12 +7,12 @@ class StoreController < ApplicationController
   def index
     if params[:set_locale]
       redirect_to store_path(:locale => params[:set_locale])
-    else 
+    else
       @cart     = current_cart
     end
 
     # Playtime: filter products by default locale if provided
-    if params[:locale] 
+    if params[:locale]
       @products = Product.where(:locale => params[:locale], :active => true)
     else
       @products = Product.all_active
@@ -24,6 +24,7 @@ class StoreController < ApplicationController
       session[:counter] = 0
     end
     session[:counter] = session[:counter] + 1
+
   end
 
 end
